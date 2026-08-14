@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Aadi Vinayak A Pillai</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #080808;
+      color: white;
+      line-height: 1.6;
+    }
+
+    /* NAVBAR */
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(8, 8, 8, 0.8);
+      backdrop-filter: blur(12px);
+      z-index: 1000;
+      border-bottom: 1px solid #222;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #7c5cff;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+
+    nav a {
+      color: #aaa;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 8% 60px;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(124,92,255,.18), transparent 30%),
+        radial-gradient(circle at 20% 80%, rgba(0,180,255,.10), transparent 30%);
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid #333;
+      border-radius: 50px;
+      color: #aaa;
+      margin-bottom: 25px;
+      font-size: 14px;
+    }
+
+    .hero h1 {
+      font-size: clamp(50px, 8vw, 95px);
+      line-height: 1;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: #7c5cff;
+    }
+
+    .hero p {
+      color: #aaa;
+      font-size: 20px;
+      max-width: 650px;
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 13px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .primary {
+      background: #7c5cff;
+      color: white;
+    }
+
+    .primary:hover {
+      transform: translateY(-3px);
+      opacity: .9;
+    }
+
+    .secondary {
+      border: 1px solid #333;
+      color: white;
+    }
+
+    .secondary:hover {
+      background: #151515;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 100px 8%;
+    }
+
+    .section-title {
+      font-size: 40px;
+      margin-bottom: 50px;
+    }
+
+    .section-title span {
+      color: #7c5cff;
+    }
+
+    /* ABOUT */
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about p {
+      color: #aaa;
+      font-size: 18px;
+    }
+
+    .about-card {
+      background: #111;
+      border: 1px solid #222;
+      padding: 35px;
+      border-radius: 15px;
+    }
+
+    .about-card h3 {
+      margin-bottom: 15px;
+    }
+
+    .about-card p {
+      font-size: 15px;
+    }
+
+    /* SKILLS */
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill {
+      background: #111;
+      border: 1px solid #292929;
+      padding: 12px 18px;
+      border-radius: 8px;
+      color: #ccc;
+    }
+
+    /* PROJECTS */
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .project {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 15px;
+      padding: 30px;
+      transition: .3s;
+    }
+
+    .project:hover {
+      transform: translateY(-8px);
+      border-color: #7c5cff;
+    }
+
+    .project-number {
+      color: #7c5cff;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .project h3 {
+      margin-bottom: 12px;
+      font-size: 23px;
+    }
+
+    .project p {
+      color: #999;
+      margin-bottom: 20px;
+    }
+
+    .project a {
+      color: #7c5cff;
+      text-decoration: none;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .contact p {
+      color: #999;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid #222;
+      padding: 30px 8%;
+      text-align: center;
+      color: #666;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      nav ul {
+        display: none;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 80px 6%;
+      }
+
+      .hero {
+        padding-left: 6%;
+        padding-right: 6%;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+    <div class="logo">Aadi Vinayak<span>A Pillai</span></div>
+
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="tag">👋 Welcome to my corner of the internet</div>
+
+      <h1>
+        Hey, I'm <span>Aadi Vinayak A Pillai</span>.
+      </h1>
+
+      <p>
+        I'm a curious person who loves technology, programming,
+        Linux, electronics, and building cool things.
+      </p>
+
+      <div class="buttons">
+        <a href="#projects" class="btn primary">
+          See My Projects
+        </a>
+
+        <a href="#contact" class="btn secondary">
+          Contact Me
+        </a>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <h2 class="section-title">
+      About <span>Me</span>
+    </h2>
+
+    <div class="about">
+
+      <div>
+        <p>
+          Hi! I'm someone who enjoys figuring out how things work
+          and turning ideas into real projects.
+        </p>
+
+        <br>
+
+        <p>
+          From software and Linux to electronics and tiny computers,
+          I'm always experimenting with something new.
+        </p>
+      </div>
+
+      <div class="about-card">
+
+        <h3>Currently exploring 🚀</h3>
+
+        <p>
+          Programming · Linux · Web Development ·
+          Electronics · Embedded Systems · AI
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SKILLS -->
+
+  <section id="skills">
+
+    <h2 class="section-title">
+      Things I <span>Like</span>
+    </h2>
+
+    <div class="skills">
+
+      <div class="skill">Linux</div>
+      <div class="skill">Python</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">HTML & CSS</div>
+      <div class="skill">Git</div>
+      <div class="skill">GitHub</div>
+      <div class="skill">Arduino</div>
+      <div class="skill">Electronics</div>
+      <div class="skill">Embedded Systems</div>
+      <div class="skill">AI</div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROJECTS -->
+
+  <section id="projects">
+
+    <h2 class="section-title">
+      My <span>Projects</span>
+    </h2>
+
+    <div class="projects">
+
+      <div class="project">
+
+        <div class="project-number">01</div>
+
+        <h3>My First Project</h3>
+
+        <p>
+          I have been working on a robot which respponds to our touch and loves us with gemini embedded
+        </p>
+
+        <a href="#">View Project →</a>
+
+      </div>
+
+
+      <div class="project">
+
+        <div class="project-number">02</div>
+
+        <h3>Another Project</h3>
+
+        <p>
+        Edu Focus Saga - a website which makes studying fun and enjoyable with companion, spotify builtin, custom timers , rewards etc
+        </p>
+
+        <a href="#">View Project →</a>
+
+      </div>
+
+
+      <div class="project">
+
+        <div class="project-number">03</div>
+
+        <h3>Something Cool</h3>
+
+        <p>
+          I am an AI enthusiast and I have been working on a project which is a AI companion which can be used for various purposes like coding, learning, chatting etc
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <div class="contact">
+
+      <h2 class="section-title">
+        Let's <span>Connect</span>
+      </h2>
+
+      <p>
+        Have an idea, want to collaborate, or just want to say hi?
+      </p>
+
+      <div class="buttons" style="justify-content:center;">
+
+        <a
+          href="mailto:aadistech1@gmail.com"
+          class="btn primary">
+          Email Me
+        </a>
+
+        <a
+          href="https://github.com/error"
+          class="btn secondary">
+          GitHub
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    © 2026 Aadi Vinayak A Pillai· Built with HTML & CSS . For Stardust community program. <br> Made with ❤️ by Aadi Vinayak A Pillai
+
+  </footer>
+
+
+</body>
+</html>
