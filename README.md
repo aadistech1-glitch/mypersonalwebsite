@@ -1,3 +1,1 @@
-hello 
-this is my personal website made for stardance programe!
-here i have given the projects i made and also some of my details i want you to know
+Welcome to my personal site! I created this page for the StarDance Program as a dedicated space to show you guys my projects I’ve been working on and share a bit about my journey. Here, you’ll find highlights of my work, and a little background on who I am. Feel free to explore, check out my latest updates, and see everything I’ve put together so far :3
