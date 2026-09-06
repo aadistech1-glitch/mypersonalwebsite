@@ -1,5 +1,5 @@
 
-/* Basic reset and typography */
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { height: 100%; }
 body {
@@ -10,7 +10,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
-/* Layout */
+
 nav {
 	display: flex;
 	justify-content: space-between;
@@ -31,7 +31,7 @@ h1 span { color: #2563eb; }
 .btn.primary { background: #2563eb; color: #fff; }
 .btn.secondary { background: transparent; color: #2563eb; border: 1px solid #2563eb; }
 
-/* Sections */
+
 section { padding: 3rem 2rem; }
 .section-title { font-size: 1.25rem; margin-bottom: 1rem; }
 .section-title span { color: #2563eb; }
